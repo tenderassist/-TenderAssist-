@@ -1,0 +1,183 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1px;
+  overflow: auto;
+  background: rgb(27, 27, 27);
+  background: radial-gradient(
+    circle,
+    rgba(27, 27, 27, 1) 0%,
+    rgba(0, 0, 4, 1) 100%
+  );
+}
+
+h1 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 60px;
+  background: rgb(0, 146, 255);
+  background: radial-gradient(
+    circle,
+    rgba(0, 146, 255, 1) 0%,
+    rgba(0, 18, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: serif, "Times New Roman", Georgia;
+  font-size: 35px;
+  background: #7cdeff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h3 {
+  font-family: serif, "Times New Roman", Georgia;
+  color: #fff;
+  font-size: 25px;
+  padding: 0;
+  font-weight: bold;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: antiquewhite;
+  font-size: 15px;
+  padding: 2px;
+}
+
+p[name="feedback"] {
+  color: #00d0ff;
+}
+
+p[id="incorrectindexreturn"] {
+  color: red;
+}
+
+label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: antiquewhite;
+  font-size: 15px;
+  padding: 5px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #0071ff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  position: "relative";
+  height: 500;
+  alignitems: "center";
+  justifycontent: "center";
+}
+
+/*Navigation bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: rgb(0, 0, 255);
+  background: linear-gradient(
+    103deg,
+    rgba(0, 0, 255, 1) 0%,
+    rgba(70, 142, 250, 1) 100%
+  );
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+nav li a:hover {
+  background-color: #1f79ff;
+}
+
+.active {
+  background-color: #000093;
+}
+
+li a,
+.dropbtn {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #1f79ff;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0d55c1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #1f79ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Contact info*/
+address {
+  font-family: serif, "Times New Roman", Georgia;
+  color: #fff;
+  font-size: 20px;
+  padding: 0;
+}
+
+address a {
+  color: #00d0ff;
+}
+
+img {
+  height: 65px;
+  width: 65px;
+}
+
+div [name="middle"] {
+  display: grid;
+  place-items: center;
+}
