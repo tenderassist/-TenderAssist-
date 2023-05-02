@@ -61,9 +61,17 @@ const BoxInPage: NextPage = () => {
       nidate.getHours() + ":" + nidate.getMinutes() + ":" + nidate.getSeconds();
     const offin = "officenum= " + boxinoffidval;
 
-    const offrecord = await pb.collection("offices").getFirstListItem(offin);
+    var offrecord = await pb.collection("offices").getFirstListItem(offin);
     const offrecordid = offrecord.id;
     const officeIDData = boxinoffidval;
+    var offb1in = offrecord.offbox1;
+    var offb2in = offrecord.offbox2;
+    var offb3in = offrecord.offbox3;
+    var offb4in = offrecord.offbox4;
+    var offb5in = offrecord.offbox5;
+    var offs1in = offrecord.offspec1;
+    var offs2in = offrecord.offspec2;
+    var offs3in = offrecord.offspec3;
 
     // BOXES ----------------------------------------------------------------
     if (boxin1val != "") {
@@ -139,16 +147,117 @@ const BoxInPage: NextPage = () => {
       });
     }
 
-    //-----------------------------------------------------------------------
+    //Office Boxes-----------------------------------------------------------------------
+    if (boxin1val == offb1in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox1: "",
+      });
+    } else if (boxin1val == offb2in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox2: "",
+      });
+    } else if (boxin1val == offb3in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox3: "",
+      });
+    } else if (boxin1val == offb4in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox4: "",
+      });
+    } else if (boxin1val == offb5in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox5: "",
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offin);
+    offb1in = offrecord.offbox1;
+    offb2in = offrecord.offbox2;
+    offb3in = offrecord.offbox3;
+    offb4in = offrecord.offbox4;
+    offb5in = offrecord.offbox5;
 
-    const offboxes =
-      "(" + boxin1val + ") (" + boxin2val + ") (" + boxin3val + ")";
-    const offspecials = "(" + specialin1val + ") (" + specialin2val + ")";
+    if (boxin2val == offb1in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox1: "",
+      });
+    } else if (boxin2val == offb2in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox2: "",
+      });
+    } else if (boxin2val == offb3in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox3: "",
+      });
+    } else if (boxin2val == offb4in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox4: "",
+      });
+    } else if (boxin2val == offb5in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox5: "",
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offin);
+    offb1in = offrecord.offbox1;
+    offb2in = offrecord.offbox2;
+    offb3in = offrecord.offbox3;
+    offb4in = offrecord.offbox4;
+    offb5in = offrecord.offbox5;
 
-    const updateOffIN = await pb.collection("offices").update(offrecordid, {
-      offboxchecked: offboxes,
-      offspecialchecked: offspecials,
-    });
+    if (boxin3val == offb1in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox1: "",
+      });
+    } else if (boxin3val == offb2in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox2: "",
+      });
+    } else if (boxin3val == offb3in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox3: "",
+      });
+    } else if (boxin3val == offb4in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox4: "",
+      });
+    } else if (boxin3val == offb5in) {
+      pb.collection("offices").update(offrecordid, {
+        offbox5: "",
+      });
+    }
+    //Office Specials-----------------------------------------------------------------------
+    if (specialin1val == offs1in) {
+      pb.collection("offices").update(offrecordid, {
+        offspec1: "",
+      });
+    } else if (specialin1val == offs2in) {
+      pb.collection("offices").update(offrecordid, {
+        offspec2: "",
+      });
+    } else if (specialin1val == offs3in) {
+      pb.collection("offices").update(offrecordid, {
+        offspec3: "",
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offin);
+    var offs1in = offrecord.offspec1;
+    var offs2in = offrecord.offspec2;
+    var offs3in = offrecord.offspec3;
+
+    if (specialin2val == offs1in) {
+      pb.collection("offices").update(offrecordid, {
+        offspec1: "",
+      });
+    } else if (specialin2val == offs2in) {
+      pb.collection("offices").update(offrecordid, {
+        offspec2: "",
+      });
+    } else if (specialin2val == offs3in) {
+      pb.collection("offices").update(offrecordid, {
+        offspec3: "",
+      });
+    }
+
     //----------------------------------------------------------
   }
 
@@ -165,15 +274,15 @@ const BoxInPage: NextPage = () => {
             </li>
           </Link>
 
-          <li>
-            <a class="active">Boxes In</a>
-          </li>
-
           <Link href={"boxout"}>
             <li>
               <a>Boxes Out</a>
             </li>
           </Link>
+
+          <li>
+            <a class="active">Boxes In</a>
+          </li>
 
           <Link href={"searchbox"}>
             <li>
@@ -196,12 +305,6 @@ const BoxInPage: NextPage = () => {
           <Link href={"checkoutstanding"}>
             <li>
               <a>Check Outstanding</a>
-            </li>
-          </Link>
-
-          <Link href={"login"}>
-            <li>
-              <a>Switch to "Admin Mode"</a>
             </li>
           </Link>
         </ul>

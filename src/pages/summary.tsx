@@ -27,8 +27,7 @@ const SummaryOfficePage: NextPage = () => {
       .collection("offices")
       .getFirstListItem(officenum);
 
-    const officeBoxData = officerecord.offboxchecked;
-    const officeSpecData = officerecord.offspecialchecked;
+    const officeBoxData = officerecord.offboxspecchecked;
     const officeCompany = officerecord.officecompany;
 
     document.getElementById("officereturnsummary").innerHTML =
@@ -36,10 +35,8 @@ const SummaryOfficePage: NextPage = () => {
       offidsummary.value +
       "; Company: " +
       officeCompany +
-      "; Boxes Last Checked: " +
-      officeBoxData +
-      "; Specials Last Checked: " +
-      officeSpecData;
+      "; Checkout History: " +
+      officeBoxData;
 
     document.getElementById("offidsummary").value = "";
   }
@@ -57,15 +54,15 @@ const SummaryOfficePage: NextPage = () => {
             </li>
           </Link>
 
-          <Link href={"boxin"}>
-            <li>
-              <a>Boxes In</a>
-            </li>
-          </Link>
-
           <Link href={"boxout"}>
             <li>
               <a>Boxes Out</a>
+            </li>
+          </Link>
+
+          <Link href={"boxin"}>
+            <li>
+              <a>Boxes In</a>
             </li>
           </Link>
 
@@ -88,12 +85,6 @@ const SummaryOfficePage: NextPage = () => {
           <Link href={"checkoutstanding"}>
             <li>
               <a>Check Outstanding</a>
-            </li>
-          </Link>
-
-          <Link href={"login"}>
-            <li>
-              <a>Switch to "Admin Mode"</a>
             </li>
           </Link>
         </ul>

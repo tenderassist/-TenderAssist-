@@ -16,15 +16,15 @@ const UserHome: NextPage = () => {
             <a class="active">Home</a>
           </li>
 
-          <Link href={"boxin"}>
-            <li>
-              <a>Boxes In</a>
-            </li>
-          </Link>
-
           <Link href={"boxout"}>
             <li>
               <a>Boxes Out</a>
+            </li>
+          </Link>
+
+          <Link href={"boxin"}>
+            <li>
+              <a>Boxes In</a>
             </li>
           </Link>
 

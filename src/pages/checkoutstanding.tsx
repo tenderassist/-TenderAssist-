@@ -56,15 +56,15 @@ const CheckOutstandingPage: NextPage = () => {
             </li>
           </Link>
 
-          <Link href={"boxin"}>
-            <li>
-              <a>Boxes In</a>
-            </li>
-          </Link>
-
           <Link href={"boxout"}>
             <li>
               <a>Boxes Out</a>
+            </li>
+          </Link>
+
+          <Link href={"boxin"}>
+            <li>
+              <a>Boxes In</a>
             </li>
           </Link>
 
@@ -89,12 +89,6 @@ const CheckOutstandingPage: NextPage = () => {
           <li>
             <a class="active">Check Outstanding</a>
           </li>
-
-          <Link href={"login"}>
-            <li>
-              <a>Switch to "Admin Mode"</a>
-            </li>
-          </Link>
         </ul>
       </nav>
 

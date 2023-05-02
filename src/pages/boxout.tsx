@@ -52,15 +52,26 @@ const BoxOutPage: NextPage = () => {
     document.getElementById("specialout1").value = "";
     document.getElementById("specialout2").value = "";
 
+    //----------------------------------------------------------
+
     const nodate = new Date();
     const dateout = nodate.getTime();
     const outdisplay =
       nodate.getHours() + ":" + nodate.getMinutes() + ":" + nodate.getSeconds();
     const offout = "officenum= " + boxoutoffidval;
 
-    const offrecord = await pb.collection("offices").getFirstListItem(offout);
+    var offrecord = await pb.collection("offices").getFirstListItem(offout);
     const officerecordid = offrecord.id;
     const officeIDData = boxoutoffidval;
+    const offboxspecdata = offrecord.offboxspecchecked;
+    var offb1 = offrecord.offbox1;
+    var offb2 = offrecord.offbox2;
+    var offb3 = offrecord.offbox3;
+    var offb4 = offrecord.offbox4;
+    var offb5 = offrecord.offbox5;
+    var offs1 = offrecord.offspec1;
+    var offs2 = offrecord.offspec2;
+    var offs3 = offrecord.offspec3;
 
     // BOXES ----------------------------------------------------------
     if (boxout1val != "") {
@@ -135,13 +146,140 @@ const BoxOutPage: NextPage = () => {
     //----------------------------------------------------------
 
     const offboxes =
-      "(" + boxout1val + ") (" + boxout2val + ") (" + boxout3val + ")";
-    const offspecials = "(" + specialout1val + ") (" + specialout2val + ")";
+      offboxspecdata +
+      "[(" +
+      boxout1val +
+      ") (" +
+      boxout2val +
+      ") (" +
+      boxout3val +
+      ") (" +
+      specialout1val +
+      ") (" +
+      specialout2val +
+      ") Time: " +
+      outdisplay +
+      " ]; ";
 
     const updateOffOUT = await pb.collection("offices").update(officerecordid, {
-      offboxchecked: offboxes,
-      offspecialchecked: offspecials,
+      offboxspecchecked: offboxes,
     });
+    //Office boxes------------------------------------------
+    if (offb1 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox1: boxout1val,
+      });
+    } else if (offb2 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox2: boxout1val,
+      });
+    } else if (offb3 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox3: boxout1val,
+      });
+    } else if (offb4 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox4: boxout1val,
+      });
+    } else if (offb5 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox5: boxout1val,
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offout);
+    offb1 = offrecord.offbox1;
+    offb2 = offrecord.offbox2;
+    offb3 = offrecord.offbox3;
+    offb4 = offrecord.offbox4;
+    offb5 = offrecord.offbox5;
+
+    if (offb1 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox1: boxout2val,
+      });
+    } else if (offb2 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox2: boxout2val,
+      });
+    } else if (offb3 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox3: boxout2val,
+      });
+    } else if (offb4 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox4: boxout2val,
+      });
+    } else if (offb5 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox5: boxout2val,
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offout);
+    offb1 = offrecord.offbox1;
+    offb2 = offrecord.offbox2;
+    offb3 = offrecord.offbox3;
+    offb4 = offrecord.offbox4;
+    offb5 = offrecord.offbox5;
+
+    if (offb1 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox1: boxout3val,
+      });
+    } else if (offb2 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox2: boxout3val,
+      });
+    } else if (offb3 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox3: boxout3val,
+      });
+    } else if (offb4 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox4: boxout3val,
+      });
+    } else if (offb5 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offbox5: boxout3val,
+      });
+    }
+
+    //Office specials------------------------------------------
+    if (offs1 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offspec1: specialout1val,
+      });
+    } else if (offs2 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offspec2: specialout1val,
+      });
+    } else if (offs3 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offspec3: specialout1val,
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offout);
+    offs1 = offrecord.offspec1;
+    offs2 = offrecord.offspec2;
+    offs3 = offrecord.offspec3;
+
+    if (offs1 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offspec1: specialout2val,
+      });
+    } else if (offs2 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offspec2: specialout2val,
+      });
+    } else if (offs3 == "") {
+      pb.collection("offices").update(officerecordid, {
+        offspec3: specialout2val,
+      });
+    }
+    offrecord = await pb.collection("offices").getFirstListItem(offout);
+    offs1 = offrecord.offspec1;
+    offs2 = offrecord.offspec2;
+    offs3 = offrecord.offspec3;
+
     //----------------------------------------------------------
   }
 
@@ -158,15 +296,15 @@ const BoxOutPage: NextPage = () => {
             </li>
           </Link>
 
+          <li>
+            <a class="active">Boxes Out</a>
+          </li>
+
           <Link href={"boxin"}>
             <li>
               <a>Boxes In</a>
             </li>
           </Link>
-
-          <li>
-            <a class="active">Boxes Out</a>
-          </li>
 
           <Link href={"searchbox"}>
             <li>
@@ -191,12 +329,6 @@ const BoxOutPage: NextPage = () => {
               <a>Check Outstanding</a>
             </li>
           </Link>
-
-          <Link href={"login"}>
-            <li>
-              <a>Switch to "Admin Mode"</a>
-            </li>
-          </Link>
         </ul>
       </nav>
 
@@ -211,7 +343,6 @@ const BoxOutPage: NextPage = () => {
           name="tempnameout"
           placeholder="E.g. Mathew"
         />
-        <br />
         <br />
         <label>Office Number: </label>
         <input

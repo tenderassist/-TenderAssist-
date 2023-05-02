@@ -94,15 +94,15 @@ const SearchBoxPage: NextPage = () => {
             </li>
           </Link>
 
-          <Link href={"boxin"}>
-            <li>
-              <a>Boxes In</a>
-            </li>
-          </Link>
-
           <Link href={"boxout"}>
             <li>
               <a>Boxes Out</a>
+            </li>
+          </Link>
+
+          <Link href={"boxin"}>
+            <li>
+              <a>Boxes In</a>
             </li>
           </Link>
 
@@ -125,12 +125,6 @@ const SearchBoxPage: NextPage = () => {
           <Link href={"checkoutstanding"}>
             <li>
               <a>Check Outstanding</a>
-            </li>
-          </Link>
-
-          <Link href={"login"}>
-            <li>
-              <a>Switch to "Admin Mode"</a>
             </li>
           </Link>
         </ul>
