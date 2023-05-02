@@ -79,7 +79,6 @@ const SearchBoxPage: NextPage = () => {
     }
     //--------------------------------------------------------------------------
     document.getElementById("boxnumsearch").value = "";
-    window.location.reload;
   }
 
   return (
@@ -114,6 +113,12 @@ const SearchBoxPage: NextPage = () => {
           <Link href={"searchoffice"}>
             <li>
               <a>Office Search</a>
+            </li>
+          </Link>
+
+          <Link href={"summary"}>
+            <li>
+              <a>Office Summary</a>
             </li>
           </Link>
 

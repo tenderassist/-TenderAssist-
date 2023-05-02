@@ -40,6 +40,12 @@ const UserHome: NextPage = () => {
             </li>
           </Link>
 
+          <Link href={"summary"}>
+            <li>
+              <a>Office Summary</a>
+            </li>
+          </Link>
+
           <Link href={"checkoutstanding"}>
             <li>
               <a>Check Outstanding</a>

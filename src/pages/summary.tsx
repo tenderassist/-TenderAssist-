@@ -8,20 +8,20 @@ const PocketBase = require("pocketbase/cjs");
 const pb = new PocketBase("https://tenderassist.pockethost.io");
 pb.autoCancellation(false);
 
-const SearchOfficePage: NextPage = () => {
+const SummaryOfficePage: NextPage = () => {
   //Enter Button
   const [value, setValue] = useState("");
 
   const handleKeyPress = (event) => {
     if (event.keyCode === 13) {
       // Call your function here
-      SearchOffices();
+      SummaryOffices();
     }
   };
   //---------------------------------------------------
 
-  async function SearchOffices() {
-    const officenum = "officenum= " + offidsearch.value;
+  async function SummaryOffices() {
+    const officenum = "officenum= " + offidsummary.value;
 
     const officerecord = await pb
       .collection("offices")
@@ -31,9 +31,9 @@ const SearchOfficePage: NextPage = () => {
     const officeSpecData = officerecord.offspecialchecked;
     const officeCompany = officerecord.officecompany;
 
-    document.getElementById("officereturninfo").innerHTML =
+    document.getElementById("officereturnsummary").innerHTML =
       "Office Number: " +
-      offidsearch.value +
+      offidsummary.value +
       "; Company: " +
       officeCompany +
       "; Boxes Last Checked: " +
@@ -41,8 +41,7 @@ const SearchOfficePage: NextPage = () => {
       "; Specials Last Checked: " +
       officeSpecData;
 
-    document.getElementById("offidsearch").value = "";
-    window.location.reload;
+    document.getElementById("offidsummary").value = "";
   }
 
   return (
@@ -76,8 +75,14 @@ const SearchOfficePage: NextPage = () => {
             </li>
           </Link>
 
+          <Link href={"searchbox"}>
+            <li>
+              <a>Office Search</a>
+            </li>
+          </Link>
+
           <li>
-            <a class="active">Office Search</a>
+            <a class="active">Office Summary</a>
           </li>
 
           <Link href={"checkoutstanding"}>
@@ -95,25 +100,25 @@ const SearchOfficePage: NextPage = () => {
       </nav>
 
       <div name="middle">
-        <h2>Office Search</h2>
+        <h2>Office Summary</h2>
         <p>Please enter the number of the office you are searching for</p>
         <br />
         <label>Office Number: </label>
         <input
           type="text"
-          id="offidsearch"
-          name="offidsearch"
+          id="offidsummary"
+          name="offidsummary"
           placeholder="E.g. '1'"
           onChange={(event) => setValue(event.target.value)}
           onKeyDown={handleKeyPress}
         />
         <br />
 
-        <p name="feedback" id="officereturninfo"></p>
+        <p name="feedback" id="officereturnsummary"></p>
 
         <br />
 
-        <button id="btnOfficeSearch" onClick={SearchOffices}>
+        <button id="btnOfficeSummary" onClick={SummaryOffices}>
           Search
         </button>
       </div>
@@ -121,4 +126,4 @@ const SearchOfficePage: NextPage = () => {
   );
 };
 
-export default SearchOfficePage;
+export default SummaryOfficePage;

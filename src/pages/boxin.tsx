@@ -150,8 +150,6 @@ const BoxInPage: NextPage = () => {
       offspecialchecked: offspecials,
     });
     //----------------------------------------------------------
-
-    window.location.reload;
   }
 
   return (
@@ -186,6 +184,12 @@ const BoxInPage: NextPage = () => {
           <Link href={"searchoffice"}>
             <li>
               <a>Office Search</a>
+            </li>
+          </Link>
+
+          <Link href={"summary"}>
+            <li>
+              <a>Office Summary</a>
             </li>
           </Link>
 

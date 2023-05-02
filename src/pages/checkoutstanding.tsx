@@ -41,8 +41,6 @@ const CheckOutstandingPage: NextPage = () => {
       outstandingSpecialNumData +
       "; Office: " +
       outstandingSpecialOffData;
-
-    window.location.reload;
   }
 
   return (
@@ -79,6 +77,12 @@ const CheckOutstandingPage: NextPage = () => {
           <Link href={"searchoffice"}>
             <li>
               <a>Office Search</a>
+            </li>
+          </Link>
+
+          <Link href={"summary"}>
+            <li>
+              <a>Office Summary</a>
             </li>
           </Link>
 

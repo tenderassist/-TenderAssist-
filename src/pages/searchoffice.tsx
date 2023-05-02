@@ -42,7 +42,6 @@ const SearchOfficePage: NextPage = () => {
       officeSpecData;
 
     document.getElementById("offidsearch").value = "";
-    window.location.reload;
   }
 
   return (
@@ -79,6 +78,12 @@ const SearchOfficePage: NextPage = () => {
           <li>
             <a class="active">Office Search</a>
           </li>
+
+          <Link href={"summary"}>
+            <li>
+              <a>Office Summary</a>
+            </li>
+          </Link>
 
           <Link href={"checkoutstanding"}>
             <li>
